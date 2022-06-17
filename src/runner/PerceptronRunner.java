@@ -6,17 +6,17 @@ import static java.lang.Math.abs;
 
 public class PerceptronRunner {
 
-    /* AND */
-    private static Double[][][] database = {
+    /* AND
+    private static final Double[][][] DATABASE = {
             { { 0D, 0D }, { 0D } },
             { { 0D, 1D }, { 0D } },
             { { 1D, 0D }, { 0D } },
             { { 1D, 1D }, { 1D } }
     };
-
+    */
 
     /* XOR
-    private static Double[][][] database = {
+    private static final Double[][][] DATABASE = {
             { { 0D, 0D }, { 0D } },
             { { 0D, 1D }, { 1D } },
             { { 1D, 0D }, { 1D } },
@@ -25,7 +25,7 @@ public class PerceptronRunner {
     */
 
     /* OR
-    private static Double[][][] database = {
+    private static final Double[][][] DATABASE = {
             { { 0D, 0D }, { 0D } },
             { { 0D, 1D }, { 1D } },
             { { 1D, 0D }, { 1D } },
@@ -33,8 +33,8 @@ public class PerceptronRunner {
     };
     */
 
-    /* Robô
-    private static Double[][][] database = {
+    /* Robô */
+    private static final Double[][][] DATABASE = {
             { { 0D, 0D, 0D }, { 1D, 1D } },
             { { 0D, 0D, 1D }, { 0D, 1D } },
             { { 0D, 1D, 0D }, { 1D, 0D } },
@@ -43,18 +43,18 @@ public class PerceptronRunner {
             { { 1D, 0D, 1D }, { 1D, 0D } },
             { { 1D, 1D, 0D }, { 1D, 0D } },
             { { 1D, 1D, 1D }, { 1D, 0D } }
-    }; */
+    };
 
     public static void main(String[] args) {
         final Double NI = 0.1;
         final int N_EPOCAS = 1000;
 
-        Perceptron perceptron = new Perceptron(database[0][0].length, database[0][1].length, NI);
+        Perceptron perceptron = new Perceptron(DATABASE[0][0].length, DATABASE[0][1].length, NI);
         Double erroEp = 0D, erroAm = 0D;
 
         for(int e = 0; e < N_EPOCAS; e++) {
             erroEp = 0D;
-            for (Double[][] sample : database) {
+            for (Double[][] sample : DATABASE) {
                 Double[] x = sample[0];
                 Double[] y = sample[1];
                 Double[] out = perceptron.learn(x, y);

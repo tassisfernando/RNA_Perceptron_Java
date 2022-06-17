@@ -49,7 +49,7 @@ public class Perceptron {
 
         for (int j = 0; j < y.length; j++) {
             for (int i = 0; i < x.length; i++) {
-                w[i][j] += ni + (y[j] - x[j]) * x[i];
+                w[i][j] += ni * (y[j] - out[j]) * x[i];
             }
         }
         return out;
