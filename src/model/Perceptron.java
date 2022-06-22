@@ -12,8 +12,8 @@ public class Perceptron {
     private int qtdOut;
     private Double[][] w;
 
-    private final static Double RANGE_MIN = -0.2;
-    private final static Double RANGE_MAX = 0.2;
+    private final static Double RANGE_MIN = -0.03;
+    private final static Double RANGE_MAX = 0.03;
 
     public Perceptron(int qtdIn, int qtdOut, Double ni) {
         this.qtdIn = qtdIn;
